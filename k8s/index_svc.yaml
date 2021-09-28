@@ -23,7 +23,6 @@ kind: Service
 metadata:
   name: nodejs-k8s
 spec:
-  type: LoadBalancer
   ports:
     - port: 8080
       targetPort: 8080
