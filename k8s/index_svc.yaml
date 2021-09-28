@@ -17,21 +17,15 @@ spec:
           image: lucabecci/node-k8s
           ports:
             - containerPort: 8080
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "200m"
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: nodejs-k8s
 spec:
+  type: LoadBalancer
   ports:
-  - port: 8080
-    targetPort: 8080
+    - port: 8080
+      targetPort: 8080
   selector:
     role: nodejs-k8s
