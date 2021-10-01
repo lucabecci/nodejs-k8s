@@ -15,3 +15,6 @@ spec:
             name: nodejs-k8s
             port:
               number: 8080
+
+
+#k8s-test-nodejs.tk domain test
