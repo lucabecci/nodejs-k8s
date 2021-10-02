@@ -3,17 +3,17 @@ kind: Ingress
 metadata:
   name: nodejs-k8s-loadbalancer
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - http:
+  - host: nodejs-k8s-loadbalancer.k8s-test-nodejs.tk
+    http:
       paths:
       - path: /
-        pathType: Prefix
         backend:
           service:
             name: nodejs-k8s
-            port:
+            port: 
               number: 8080
 
 
